@@ -69,6 +69,11 @@ class Board:
             key: c for key, c in potential_cells.items() if self.cell_lives(c)
         }
 
+def simulate(b: Board, iterations: int) -> Board:
+    for i in range(iterations):
+        b.advance_next_gen()
+    return b
+
 def main() -> None:
     print("Hello from pythongameoflife!")
 
@@ -76,10 +81,8 @@ def main() -> None:
     print("Original Board")
     my_board = Board([Cell(1, 0), Cell(2, 1), Cell(0, 2), Cell(1, 2), Cell(2, 2)])
     my_board.print()
-    for i in range(12):
-        my_board.advance_next_gen()
-        print("Next Gen")
-        my_board.print()
+    simulate(my_board, 100000)
+    my_board.print()
 
 
 if __name__ == "__main__":
