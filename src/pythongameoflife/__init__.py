@@ -82,6 +82,7 @@ def main() -> None:
     my_board = Board([Cell(1, 0), Cell(2, 1), Cell(0, 2), Cell(1, 2), Cell(2, 2)])
     my_board.print()
     simulate(my_board, 100000)
+    print("Final Board")
     my_board.print()
 
 
